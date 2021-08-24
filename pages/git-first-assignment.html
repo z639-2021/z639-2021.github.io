@@ -58,9 +58,6 @@ Social Media Mining (Z639)            </a>
                          <li class="active"><a href="/pages/git-first-assignment.html">
                              Using Git for the first assignment
                           </a></li>
-                         <li><a href="/pages/git-linux.html">
-                             Git at IU
-                          </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -85,17 +82,23 @@ The IT department at the university also has a lengthy pdf tutorial, <a href="ht
 <h1>Follow the GitHub Classroom Link</h1>
 <p>Following the GitHub Classroom link posted on Canvas should leave you with a private repository with a name like "z639-2021/assignment1-{username}", where <code>{username}</code> is your GitHub username.
 So an example of a repository would be <code>z639-2021/assignment1-myusername</code>, accessible to its owner at <a href="https://github.com/z639-2021/assignment1-myusername">https://github.com/z639-2021/assignment1-myusername</a>.</p>
-<h1>Clone the repository with HTTPS</h1>
-<p>Clicking on the <code>Clone or download</code> button will let you create a local copy of the repository.
-Use the <code>Clone with HTTPS</code> option for now.
+<h1>Configure SSH authentication</h1>
+<p>The following steps assume you have connected to one of the School Linux servers (e.g., <code>gh.luddy.indiana.edu</code>) and that you have not already generated an SSH key. If anything is confusing, consider reading GitHub's own version of these instructions, <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">Connecting to GitHub with SSH</a>.</p>
+<ol>
+<li>Generate a new SSH key: <code>ssh-keygen -t ed25519</code>. This will create two files in the <code>~/.ssh</code> directory: <code>~/.ssh/id_ed25519</code> and <code>~/.ssh/id_ed25519.pub</code>.</li>
+<li>Add the SSH public key to your GitHub account: Add the contents of <code>~/.ssh/id_ed25519.pub</code> to your GitHub account (look under Settings, under "SSH and GPG keys").</li>
+</ol>
+<p>That's it. You can test that things have been configured with <code>ssh -T git@github.com</code>. If you configured things correctly, you'll see a message with your username.</p>
+<h1>Clone the repository</h1>
+<p>Clicking on the <code>Code</code> button will let you create a local copy of the repository.
+Use the <code>Clone with SSH</code> option for now.
 You should be given instructions about what URL to use with git.
-For example, it might tell you to <code>clone</code> the following url, <code>https://github.com/z639-2021/assignment1-riddella.git</code>.
+For example, it might tell you to <code>clone</code> the following address, <code>git@github.com:z639-2021/assignment1-myusername.git</code>.
 Cloning this repository means running the following command in the Unix environment:</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/z639-2021/assignment1-myusername.git
+<div class="highlight"><pre><span></span>git clone git@github.com:z639-2021/assignment1-myusername.git
 </pre></div>
 
 
-<p><code>git</code> should prompt you for your GitHub username and password. (To avoid having to enter these all the time, run the following once: <code>git config --global credential.helper store</code>.)</p>
 <p>You should have a directory in your current directory called <code>assignment1-{username}</code> (e.g., <code>assignment1-myusername</code>). You can <code>cd</code> to this directory and look around inside using <code>ls</code>.</p>
 <p>Read the instructions in the <code>README.md</code> file. Some assignments have special instructions</p>
 <h1>Edit the assignment file directly using an editor</h1>
@@ -117,7 +120,7 @@ These tests check to see if you're on the right track. They are not exhaustive t
 
 
 <p>Now you need to <code>commit</code> your changes. You do need to provide a "commit message" in order to do this. The commit message does not matter. (When collaborating on code with other people, informative commit messages are essential.)</p>
-<div class="highlight"><pre><span></span><span class="err">git commit -m&quot;Make some changes&quot;</span>
+<div class="highlight"><pre><span></span><span class="err">git commit</span>
 </pre></div>
 
 
