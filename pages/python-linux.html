@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Using Python on Luddy Linux Servers - Social Media Mining (Z639)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/pages/python-linux.html">
+
+        <meta name="author" content="" />
+        <meta name="description" content="Python 3 is installed on all of the Linux computers associated with Luddy. These computers are available for you to use and they are very powerful, modern workstations. If you are performing computationally-intensive work, you will find these computers will perform very well. Accessing the School&#39;s servers What Linux systems …" />
+
+    <meta property="og:site_name" content="Social Media Mining (Z639)" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Using Python on Luddy Linux Servers"/>
+    <meta property="og:url" content="/pages/python-linux.html"/>
+    <meta property="og:description" content="Python 3 is installed on all of the Linux computers associated with Luddy. These computers are available for you to use and they are very powerful, modern workstations. If you are performing computationally-intensive work, you will find these computers will perform very well. Accessing the School&#39;s servers What Linux systems …" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">
+Social Media Mining (Z639)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/">
+                             Calendar
+                          </a></li>
+                         <li><a href="/">
+                             Calendar
+                          </a></li>
+                         <li><a href="/pages/syllabus.html">
+                             Syllabus
+                          </a></li>
+                         <li><a href="/pages/guidelines.html">
+                             Guidelines
+                          </a></li>
+                         <li class="active"><a href="/pages/python-linux.html">
+                             Using Python on Luddy Linux Servers
+                          </a></li>
+                         <li><a href="/pages/git-first-assignment.html">
+                             Using Git for the first assignment
+                          </a></li>
+                         <li><a href="/pages/git-linux.html">
+                             Git at IU
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <section id="content" class="body">
+        <h1 class="entry-title">Using Python on Luddy Linux Servers</h1>
+        
+        <div class="entry-content">
+            <p>Python 3 is installed on all of the Linux computers associated with Luddy. These
+computers are available for you to use and they are very powerful, modern
+workstations. If you are performing computationally-intensive work, you will
+find these computers will perform very well.</p>
+<h1>Accessing the School's servers</h1>
+<p><a href="https://uisapp2.iu.edu/confluence-prd/pages/viewpage.action?pageId=114491559">What Linux systems are available?</a> describes the Linux servers
+available to students in the School of Informatics and Computing. We will be using a server called <code>gh.luddy.indiana.edu</code> (<code>gh</code> for Grace Hopper).</p>
+<p>You can access a computer on the cluster from anywhere in the world by using an SSH client such as <code>ssh</code> on macOS and Linux. Just type:</p>
+<div class="highlight"><pre><span></span><span class="err">ssh &lt;net-id&gt;@gh.luddy.indiana.edu</span>
+</pre></div>
+
+
+<p>where <code>&lt;net-id&gt;</code> should be replaced by your IU netid. If your netid is <code>chen</code> then you would run <code>ssh chen@gh.luddy.indiana.edu</code>.</p>
+<p>If you are not a Luddy student or you transferred into Luddy from a different school, you may not have an account on this server. Email your instructor for instructions.</p>
+<p>(You may also access Linux computers in person! There are Linux machines in Luddy Hall 3111.)</p>
+<h1>Using Python</h1>
+<p>Running <code>python3</code> will start the familiar Python REPL. You can run python scripts with <code>python3 scriptname.py</code> where <code>scriptname.py</code> is the name of a file containing Python code.</p>
+<p><strong>IPython</strong>. IPython is a user-friendly REPL. Launch it by running <code>ipython3</code>.</p>
+<h1>Installing Scientific Computing Packages</h1>
+<p>Many of commonly used packages are already installed on <code>gh.luddy.indiana.edu</code>. You can install others by running <code>python3 -m pip install {package-name}</code>.</p>
+<h1>Using Jupyter Notebook</h1>
+<p>If you are new to Python and wish to use Jupyter Notebook you likely want to install Python on your local machine. The following instructions are for experienced Linux users.</p>
+<h2>Using Jupyter Notebook</h2>
+<p><strong>If you are in Luddy Hall 3111</strong> using the Linux computers there, you can use a browser-based REPL, Jupyter Notebook.</p>
+<p>First, install (or upgrade) the jupyter notebook with the following command:</p>
+<div class="highlight"><pre><span></span><span class="err">python3 -m pip install --user jupyter</span>
+</pre></div>
+
+
+<p>After Jupyter is installed, you can launch it with the following command:</p>
+<div class="highlight"><pre><span></span><span class="err">python3 -m notebook</span>
+</pre></div>
+
+
+<p>At this point, you should be able to use the jupyter notebook by opening a web browser and navigating to <code>http://localhost:8888</code>.</p>
+<h2>Using Jupiter Notebook Remotely</h2>
+<p>You can use the Jupyter Notebook remotely from any macOS, Linux, or Windows computer. To do this you need to create an ssh tunnel between your computer and the SOIC linux computer. This tunnel will allow you to access a port on the remote computer as if it were a local port.</p>
+<p>The following instructions should work on both macOS and Linux machines. Windows users will need to consult documentation for their chosen SSH client.</p>
+<p>First, pick a port number above 8000 which is unlikely to be chosen by another user. We will use 8891 in this example. If this port is in use on the remote (or local) computer, the following sequence of commands will not work. If there is a port conflict, pick another port and try again.</p>
+<div class="highlight"><pre><span></span>ssh -L <span class="m">8891</span>:localhost:8891 &lt;netid&gt;@gh.luddy.indiana.edu
+</pre></div>
+
+
+<p>Launch the jupyter notebook with the chosen port:</p>
+<div class="highlight"><pre><span></span><span class="err">python3 -m jupyter notebook --port=8891</span>
+</pre></div>
+
+
+<p>In the console you should see a line indicating how to access the notebook such as:</p>
+<div class="highlight"><pre><span></span><span class="err">    Copy/paste this URL into your browser when you connect for the first time,</span>
+<span class="err">    to login with a token:</span>
+<span class="err">        http://localhost:8891/?token=ccc12f94863ee5ac8a22705c029fe5ae8b12512f9a4cde6</span>
+</pre></div>
+
+
+<p>Paste this url into your <em>local</em> web browser.</p>
+<p>When you are finished remember to shutdown the jupyter notebook with control-c and to close your ssh terminal.</p>
+        </div>
+    </section>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy;  
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

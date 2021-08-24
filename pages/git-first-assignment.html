@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Using Git for the first assignment - Social Media Mining (Z639)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/pages/git-first-assignment.html">
+
+        <meta name="author" content="" />
+        <meta name="description" content="The first assignment requires minimal knowledge of Python and some knowledge of Linux/Unix. (Knowledge of Unix is an official pre-requisite for this course.) Those wishing to learn how to work in the Unix environment should check out the following website, The Unix Shell. The IT department at the university …" />
+
+    <meta property="og:site_name" content="Social Media Mining (Z639)" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Using Git for the first assignment"/>
+    <meta property="og:url" content="/pages/git-first-assignment.html"/>
+    <meta property="og:description" content="The first assignment requires minimal knowledge of Python and some knowledge of Linux/Unix. (Knowledge of Unix is an official pre-requisite for this course.) Those wishing to learn how to work in the Unix environment should check out the following website, The Unix Shell. The IT department at the university …" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">
+Social Media Mining (Z639)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/">
+                             Calendar
+                          </a></li>
+                         <li><a href="/">
+                             Calendar
+                          </a></li>
+                         <li><a href="/pages/syllabus.html">
+                             Syllabus
+                          </a></li>
+                         <li><a href="/pages/guidelines.html">
+                             Guidelines
+                          </a></li>
+                         <li><a href="/pages/python-linux.html">
+                             Using Python on Luddy Linux Servers
+                          </a></li>
+                         <li class="active"><a href="/pages/git-first-assignment.html">
+                             Using Git for the first assignment
+                          </a></li>
+                         <li><a href="/pages/git-linux.html">
+                             Git at IU
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <section id="content" class="body">
+        <h1 class="entry-title">Using Git for the first assignment</h1>
+        
+        <div class="entry-content">
+            <p>The first assignment requires minimal knowledge of Python and some knowledge of Linux/Unix.
+(Knowledge of Unix is an official pre-requisite for this course.)
+Those wishing to learn how to work in the Unix environment should check out the following website, <a href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a>.
+The IT department at the university also has a lengthy pdf tutorial, <a href="https://ittraining.iu.edu/explore-topics/show-all/pdfs/docs/UNXBA.pdf">Unix: The Basics</a>.</p>
+<p>These instructions assume you have created a GitHub account.</p>
+<h1>Follow the GitHub Classroom Link</h1>
+<p>Following the GitHub Classroom link posted on Canvas should leave you with a private repository with a name like "z639-2021/assignment1-{username}", where <code>{username}</code> is your GitHub username.
+So an example of a repository would be <code>z639-2021/assignment1-myusername</code>, accessible to its owner at <a href="https://github.com/z639-2021/assignment1-myusername">https://github.com/z639-2021/assignment1-myusername</a>.</p>
+<h1>Clone the repository with HTTPS</h1>
+<p>Clicking on the <code>Clone or download</code> button will let you create a local copy of the repository.
+Use the <code>Clone with HTTPS</code> option for now.
+You should be given instructions about what URL to use with git.
+For example, it might tell you to <code>clone</code> the following url, <code>https://github.com/z639-2021/assignment1-riddella.git</code>.
+Cloning this repository means running the following command in the Unix environment:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/z639-2021/assignment1-myusername.git
+</pre></div>
+
+
+<p><code>git</code> should prompt you for your GitHub username and password. (To avoid having to enter these all the time, run the following once: <code>git config --global credential.helper store</code>.)</p>
+<p>You should have a directory in your current directory called <code>assignment1-{username}</code> (e.g., <code>assignment1-myusername</code>). You can <code>cd</code> to this directory and look around inside using <code>ls</code>.</p>
+<p>Read the instructions in the <code>README.md</code> file. Some assignments have special instructions</p>
+<h1>Edit the assignment file directly using an editor</h1>
+<p>Edit <code>assignment1.py</code> in a text editor such as <code>nano</code>, <code>vi</code>, or <code>emacs</code>.
+Replace the sections marked <code># YOUR CODE HERE</code> with Python code.  A description
+of what the function should do is contained in the function's docstring.</p>
+<h1>Check that your assignment is free from syntax errors and indentation errors</h1>
+<p>Before submitting your code, check that your assignment is free of trivial Python errors.
+You can do this by executing the file: <code>python3 assignment1.py</code>.
+If you've made a syntax error Python will report this by printing <code>SyntaxError: invalid syntax</code>.
+If there are indentation errors, Python will tell you.
+Python should also tell you on what line an error occurs. Fix these errors first.</p>
+<p>If you don't have any syntax errors, a couple of superficial tests will be run on your code to see if your functions are working.
+These tests check to see if you're on the right track. They are not exhaustive tests. On your very first assignment you may wish to ignore these entirely. Just make sure that you don't have any syntax or indentation errors.</p>
+<h1>Submit your assignment</h1>
+<p>When you are ready to submit your assignment you need to <code>push</code> it to the GitHub server so the autograder can grade it. First <code>add</code> your modified file with</p>
+<div class="highlight"><pre><span></span><span class="err"> git add assignment1.py</span>
+</pre></div>
+
+
+<p>Now you need to <code>commit</code> your changes. You do need to provide a "commit message" in order to do this. The commit message does not matter. (When collaborating on code with other people, informative commit messages are essential.)</p>
+<div class="highlight"><pre><span></span><span class="err">git commit -m&quot;Make some changes&quot;</span>
+</pre></div>
+
+
+<p>Now <code>push</code> your changes (i.e., upload them):</p>
+<div class="highlight"><pre><span></span><span class="err">git push</span>
+</pre></div>
+
+
+<p>You're done.</p>
+        </div>
+    </section>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy;  
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
